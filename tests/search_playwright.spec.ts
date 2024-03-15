@@ -6,6 +6,6 @@ test('test', async ({ page }) => {
   await page.getByLabel('検索', { exact: true }).fill('playwrite');
   await page.getByLabel('検索', { exact: true }).press('Enter');
   await expect(page.locator('#search')).toContainText('Playwright: Fast and reliable end-to-end testing for modern ...');
-  await expect(page).toHaveScreenshot();
+  await expect(await page.screenshot()).toMatchSnapshot();
   await page.close();
 });
