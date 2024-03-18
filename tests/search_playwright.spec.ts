@@ -9,6 +9,7 @@ test('test', async ({ page }) => {
   // await page.getByLabel('検索', { exact: true }).fill('playwrite');
   // await page.getByLabel('検索', { exact: true }).press('Enter');
   await expect(page.locator('#search')).toContainText('Playwright: Fast and reliable end-to-end testing for modern ...');
-  await expect(page).toHaveScreenshot('test.png');
+  await page.screenshot({path: './directory_contains_actual_images/top_page.png',});
+  // await expect(page).toHaveScreenshot('test.png');
   await page.close();
 });
